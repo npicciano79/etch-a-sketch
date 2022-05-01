@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Etch-a-Sketch</title>
+        <script src="/odin/etch/javascript/javascript.js" defer></script>
+        <link rel='stylesheet' href="/odin/etch/styles/styles.css">  
+        <link rel="slider stylesheet" href="/odin/etch/styles/slider-style.css">  
+    </head>
+<body>
+    <div class="title">
+        <h1 class="etch-title">Etch-A-Sketch</h1>    
+    </div>
+    <div class="main-display">
+        <div class="main-display-left" id="main-display-left">
+            <div class="main-grid" id="main-grid">
+                
+                         
+
+            </div>
+                
+        </div>
+
+     
+        <div class="main-display-right">
+            <div class="main-display-right slider">
+                <p>Slide to adjust the grid:</p>
+                <input class='range-slide' id="my-slider" type="range" min="1" max="100" value="1">
+                <p>Grid Squares: <span id="grid-squares"></span></p>
+            </div>
+            <div class="button-container">
+                <button class="btn color" onclick="buttonSelect(0)">Color</button>
+                <button class="btn bw" onclick="buttonSelect(1)">Black/White</button>       
+                <button class="btn reset" onclick="buttonSelect(2)">Reset</button>
+           
+            </div>
+        </div>
+
+    </div>   
+   
+    
+
+
+
+
+</body>
+</html>
