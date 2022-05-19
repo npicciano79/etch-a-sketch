@@ -1,5 +1,4 @@
 
-
 /*grid slider control*/
 var slider=document.getElementById('my-slider');
 var squares=document.getElementById("grid-squares");
@@ -27,9 +26,6 @@ function randomColor(){
         return color;
 
     }
-          
-
-
 
 }
 
@@ -40,20 +36,20 @@ function hoverColor($event){
 }
 
 
-//create grid based on slider values 
 
+
+//create grid based on slider values 
 function gridCreate(gridval){
     var container=document.getElementById('main-grid');
     container.innerHTML='';
     let squares=gridval*gridval;
 
-    document.documentElement.style.setProperty("--columns-row",gridval);
+    document.documentElement.style.setProperty("--columns-row",gridval);  //css variable columns-row 
     for (i=0; i<squares; i++){
         let square =document.createElement('div');
         square.classList.add('grid-square');
         container.appendChild(square);
-        square.addEventListener('mouseover',hoverColor);
-        
+        square.addEventListener('mousedown',hoverColor);   
     }
     
 }
