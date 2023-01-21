@@ -1,5 +1,9 @@
-
+//dev1 branch 
+//add mousedown event listener 
 /*grid slider control*/
+var isDown=false;
+var isOver=false;
+
 var slider=document.getElementById('my-slider');
 var squares=document.getElementById("grid-squares");
 squares.innerHTML=slider.value;
@@ -7,9 +11,12 @@ squares.innerHTML=slider.value;
 slider.oninput=function(){
     squares.innerHTML=this.value;
     gridCreate(this.value);
+    //console.log(this.value)
 }
 
-localStorage.setItem('color_score',none);
+
+
+//localStorage.setItem('color_score',none);
 
 
 function randomColor(){
@@ -38,18 +45,21 @@ function hoverColor($event){
 
 
 
+
 //create grid based on slider values 
 function gridCreate(gridval){
     var container=document.getElementById('main-grid');
     container.innerHTML='';
-    let squares=gridval*gridval;
+    let squares=gridval*gridval;  //creates square of grid
+ 
 
-    document.documentElement.style.setProperty("--columns-row",gridval);  //css variable columns-row 
+    document.documentElement.style.setProperty("--columns-row",gridval);  
     for (i=0; i<squares; i++){
         let square =document.createElement('div');
         square.classList.add('grid-square');
-        container.appendChild(square);
-        square.addEventListener('mousedown',hoverColor);   
+        container.appendChild(square); 
+        square.addEventListener('click',hoverColor)
+          
     }
     
 }
@@ -57,7 +67,6 @@ function gridCreate(gridval){
 
 function buttonSelect(value){
     if (value==2){
-
         window.location.reload();
     }else if (value==1){
         var color_score=localStorage.getItem('color_score');    //black white images
